@@ -1,107 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./css/style.css" />
-    <title>Navbar Button</title>
-  </head>
-  <body>
-    <nav class="navbar">
-      <div class="container">
-        <div class="flex">
-          <a href="#" class="navbar-brand">
-            <img src="./Assets/logo.png" alt="Logo" />
-          </a>
-          <button class="button1">Sign Up</button>
-        </div>
-      </div>
-    </nav>
-    <section id="banner">
-      <div class="container">
-        <h1 class="font">Cool Dark UI Template for Webflow Agencies!</h1>
-        <button class="button2">Stay Focused</button>
-      </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Dark UI Template</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8; /* Light background to match the image */
+            color: #333;
+            line-height: 1.6;
+        }
+        .bg-pattern {
+            background-image: url('https://placehold.co/1920x1080/F8F8F8/E0E0E0?text=Background+Pattern'); /* Placeholder for the subtle background pattern */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center top;
+        }
+        .gradient-button {
+            background: linear-gradient(90deg, #6366f1, #8b5cf6); /* Example gradient colors */
+            transition: all 0.3s ease;
+        }
+        .gradient-button:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+        .card-shadow {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+        .review-star {
+            color: #ffc107; /* Gold color for stars */
+        }
+        /* Custom styles for the dark sections as seen in the image */
+        .dark-section-bg {
+            background-color: #1a1a2e; /* A dark blue/purple shade */
+            color: #e0e0e0;
+        }
+        .testimonial-card {
+            background-color: #2a2a4a; /* Slightly lighter dark for cards */
+        }
+        .text-purple-600 {
+            color: #8b5cf6; /* Tailwind's purple-600 */
+        }
+        .text-indigo-600 {
+            color: #6366f1; /* Tailwind's indigo-600 */
+        }
+        .border-purple-600 {
+            border-color: #8b5cf6;
+        }
+        .border-indigo-600 {
+            border-color: #6366f1;
+        }
+        .text-gray-400 {
+            color: #9ca3af; /* Tailwind's gray-400 */
+        }
+        .text-gray-500 {
+            color: #6b7280; /* Tailwind's gray-500 */
+        }
+        .text-gray-700 {
+            color: #374151; /* Tailwind's gray-700 */
+        }
+    </style>
+</head>
+<body class="bg-pattern">
+    <!-- Header -->
+    <header class="flex justify-between items-center py-6 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
+        <div class="text-2xl font-bold text-indigo-600">LOGO</div>
+        <nav class="hidden md:flex space-x-8 text-gray-700">
+            <a href="#" class="hover:text-indigo-600 transition-colors">Home</a>
+            <a href="#" class="hover:text-indigo-600 transition-colors">About</a>
+            <a href="#" class="hover:text-indigo-600 transition-colors">How it Works</a>
+            <a href="#" class="hover:text-indigo-600 transition-colors">Services</a>
+        </nav>
+        <button class="hidden md:block px-6 py-2 rounded-full border border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white transition-colors">Sign Up</button>
+        <!-- Mobile Menu Button (Hamburger) -->
+        <button class="md:hidden text-gray-700 text-2xl">
+            &#9776;
+        </button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="text-center py-20 px-4 md:px-8 lg:px-16">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 text-gray-800">
+            Cool Dark UI Template for <br> Webflow Agencies!
+        </h1>
+        <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            This template instantly leveled up our presence.
+        </p>
+        <button class="gradient-button text-white font-semibold px-8 py-3 rounded-full text-lg shadow-lg">
+            GET STARTED
+        </button>
     </section>
-    <section id="action">
-      <div class="container">
-       <div class="acton_1">
-         <div class="aciton_left">
-            <h2 class="haction">See It in Action</h2>
-            <p class="hpaction">Explore the live preview and imagine your brand in this bold new look.</p>
-            <button class="button3">
-                Launch Live Preview 
+
+    <!-- See it in Action Section -->
+    <section class="py-20 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">See it in Action</h2>
+            <p class="text-gray-600 text-lg mb-6">
+                This template instantly leveled up our presence and helped us imagine your brand in this bold new look.
+            </p>
+            <button class="px-6 py-3 rounded-full border border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white transition-colors">
+                Learn More
             </button>
         </div>
-        <div class="action-img">
-            <img src="./Assets/action.png" alt="">
+        <div class="md:w-1/2 flex justify-center md:justify-end">
+            <img src="https://placehold.co/600x400/2A2A4A/E0E0E0?text=Webflow+Conf+2022+Screenshot" alt="Webflow Conf 2022" class="rounded-lg shadow-xl max-w-full h-auto">
         </div>
-       </div>
-      </div>
     </section>
-    <section class="stats-section">
-   <div class="container">
-     <h2>Joined Thousands of Productive Users</h2>
-    <div class="stats-container">
-      <div class="stat-item">
-        <h3>50K</h3>
-        <p>Active Users</p>
-      </div>
-      <div class="stat-item">
-        <h3>2M+</h3>
-        <p>Focus Sessions</p>
-      </div>
-      <div class="stat-item">
-        <h3>95%</h3>
-        <p>Satisfaction Rate</p>
-      </div>
-    
-   </div>
-  </section>
-  <section>
-    <div class="container">
-      <p class="rate">
-        What our users say
-      </p>
-      <div class="box">
-        <img src="./Assets/box1.png" alt="">
-        <img src="./Assets/box1.png" alt="">
-        <img src="./Assets/box1.png" alt="">
-        
 
-      </div>
-    </div>
-  </section>
-  <section>
-    <div class="container">
-      <h3 class="ready">
-          Ready to focus better
-      </h3>
-      <p class="readyp">
-          This template instantly leveled up our presence.” – Studio Vertex
-      </p>
-      <button class="readybtn">
-          Ger Started Free
-      </button>
-      <div class="redypic">
-        <img src="/Assets/box.png" alt="">
-      </div>
-    </div>
-  </section>
-  <section>
-    <div class="container">
-<img src="./Assets/from.png" alt="">
-    </div>
-  </section>
-  <section>
-   
-      <img src="./Assets/futter.png" alt="">
+    <!-- Joined Thousands of Productive Users Section -->
+    <section class="bg-purple-50 py-20 px-4 md:px-8 lg:px-16 text-center rounded-lg max-w-7xl mx-auto my-10 card-shadow">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-gray-800">Joined Thousands of Productive Users</h2>
+        <div class="flex flex-col md:flex-row justify-around items-center space-y-10 md:space-y-0 md:space-x-8">
+            <div class="flex flex-col items-center">
+                <span class="text-5xl md:text-6xl font-extrabold text-indigo-600 mb-2">50K</span>
+                <span class="text-gray-600 text-lg">Active Users</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <span class="text-5xl md:text-6xl font-extrabold text-indigo-600 mb-2">2M+</span>
+                <span class="text-gray-600 text-lg">Focus Sessions</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <span class="text-5xl md:text-6xl font-extrabold text-indigo-600 mb-2">95%</span>
+                <span class="text-gray-600 text-lg">Satisfaction Rate</span>
+            </div>
+        </div>
+    </section>
 
-   
-  </section>
-  </body>
+    <!-- What our users say Section -->
+    <section class="py-20 px-4 md:px-8 lg:px-16 text-center dark-section-bg">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-gray-100">What our users say</h2>
+        <div class="flex flex-col md:flex-row justify-center items-stretch space-y-8 md:space-y-0 md:space-x-8">
+            <!-- Testimonial Card 1 -->
+            <div class="testimonial-card p-6 rounded-lg text-left max-w-sm w-full card-shadow">
+                <div class="flex mb-4">
+                    <span class="review-star">&#9733;</span>
+                    <span class="review-star">&#9733;</span>
+                    <span class="review-star">&#9733;</span>
+                    <span class="review-star">&#9733;</span>
+                    <span class="review-star">&#9733;</span>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-gray-100">Loved by Designers</h3>
+                <p class="text-gray-400 mb-4">
+                    This template instantly leveled up our presence.
+                </p>
+                <div class="flex items-center">
+                    <img src="https://placehold.co/40x40/6366f1/FFFFFF?text=AV" alt="Avatar" class="w-10 h-10 rounded-full mr-3">
+                    <div>
+                        <p class="font-semibold text-gray-100">Studio Vertex</p>
+                        <p class="text-sm text-gray-500">CEO</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonial Card 2 -->
+            <div class="testimonial-card p-6 rounded-lg text-left max-w-sm w-full card-shadow">
+                <div class="flex mb-4">
+                    <span class="review-star">&#9733;</span>
+                    <span class="review-star">&#9733;</span>
+                    <span class="review-star">&#9733;</span>
+                    <span class="review-star">&#9733;</span>
+                    <span class="review-star">&#9733;</span>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-gray-100">Loved by Designers</h3>
+                <p class="text-gray-400 mb-4">
+                    This template instantly leveled up our presence.
+                </p>
+                <div class="flex items-center">
+                    <img src="https://placehold.co/40x40/6366f1/FFFFFF?text=AV" alt="Avatar" class="w-10 h-10 rounded-full mr-3">
+                    <div>
+                        <p class="font-semibold text-gray-100">Studio Vertex</p>
+                        <p class="text-sm text-gray-500">CEO</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonial Card 3 -->
+            <div class="testimonial-card p-6 rounded-lg text-left max-w-sm w-full card-shadow">
+                <div class="flex mb-4">
+                    <span class="review-star">&#9733;</span>
+                    <span class="review-star">&#9733;</span>
+                    <span class="review-star">&#9733;</span>
+                    <span class="review-star">&#9733;</span>
+                    <span class="review-star">&#9733;</span>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-gray-100">Loved by Designers</h3>
+                <p class="text-gray-400 mb-4">
+                    This template instantly leveled up our presence.
+                </p>
+                <div class="flex items-center">
+                    <img src="https://placehold.co/40x40/6366f1/FFFFFF?text=AV" alt="Avatar" class="w-10 h-10 rounded-full mr-3">
+                    <div>
+                        <p class="font-semibold text-gray-100">Studio Vertex</p>
+                        <p class="text-sm text-gray-500">CEO</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ready to focus better Section -->
+    <section class="py-20 px-4 md:px-8 lg:px-16 text-center max-w-7xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Ready to focus better</h2>
+        <p class="text-gray-600 text-lg mb-12">
+            "This template instantly leveled up our presence." - Studio Vertex
+        </p>
+        <img src="https://placehold.co/1000x500/2A2A4A/E0E0E0?text=Webflow+Conf+2022+Full+Screenshot" alt="Webflow Conf 2022 Full" class="rounded-lg shadow-xl max-w-full h-auto mx-auto">
+    </section>
+
+    <!-- Let's Get in Touch Section -->
+    <section class="py-20 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto flex flex-col md:flex-row items-start justify-between">
+        <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Let's Get <br> in Touch</h2>
+        </div>
+        <div class="md:w-1/2 w-full">
+            <form class="space-y-6">
+                <div>
+                    <label for="email" class="sr-only">Email</label>
+                    <input type="email" id="email" placeholder="Email" class="w-full px-5 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+                </div>
+                <div>
+                    <label for="name" class="sr-only">Name</label>
+                    <input type="text" id="name" placeholder="Name" class="w-full px-5 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+                </div>
+                <div>
+                    <label for="message" class="sr-only">Message</label>
+                    <textarea id="message" placeholder="Tell us your message..." rows="5" class="w-full px-5 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                </div>
+                <button type="submit" class="gradient-button text-white font-semibold px-8 py-3 rounded-full text-lg shadow-lg w-full md:w-auto">
+                    Get in Touch
+                </button>
+            </form>
+        </div>
+    </section> 
+
+    <!-- Footer -->
+    <footer class="py-10 px-4 md:px-8 lg:px-16 text-center">
+        <div class="text-2xl font-bold text-indigo-600 mb-4">LOGO</div>
+        <p class="text-gray-600 mb-6 max-w-xl mx-auto">
+            Ready to elevate your online presence? Contact us today to discuss your project and discover how we can help.
+        </p>
+        <nav class="flex justify-center space-x-8 text-gray-700">
+            <a href="#" class="hover:text-indigo-600 transition-colors">Home</a>
+            <a href="#" class="hover:text-indigo-600 transition-colors">About</a>
+            <a href="#" class="hover:text-indigo-600 transition-colors">How it Works</a>
+            <a href="#" class="hover:text-indigo-600 transition-colors">Services</a>
+        </nav>
+    </footer>
+</body>
 </html>
